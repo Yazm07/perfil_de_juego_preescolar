@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil</title>
+    <style>
+        html, body {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            background: #f6f4d2;
+            color: #3a3a3a;
+            font-family: 'Roboto', sans-serif;
+        }
+      h1 {
+         color: #243010;
+        text-align: center;
+      }
+      p {
+        color: black;
+        text-align: center;
+      }
+        #header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #navigation-bar ul {
+            margin: 0;
+            padding: 0;
+            border: 1px solid #f1d7ff;
+            background-color: #beef9e;
+        }
+
+        #navigation-bar li {
+            display: inline-block;
+        }
+
+        #navigation-bar li a {
+            display: block;
+            color: #665;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        #navigation-bar li a:hover:not(.active) {
+            background-color: #a3b18a;
+          color: white;
+        }
+
+        #navigation-bar li a.active {
+            color: white;
+            background-color: #344e41;
+        }
+
+        #navigation-bar .menu__hamburger-icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            #navigation-bar li:not(:first-child) {
+                display: none;
+            }
+
+            #navigation-bar li.menu__hamburger-icon {
+                display: block;
+                float: right;
+            }
+
+            #navigation-bar.responsive {
+                position: relative;
+            }
+
+            #navigation-bar.responsive .menu__hamburger-icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            #navigation-bar.responsive .menu__hamburger-icon a {
+                color: #fff;
+            }
+
+            #navigation-bar.responsive li {
+                float: none;
+                display: block !important;
+            }
+
+            #navigation-bar.responsive li a {
+                text-align: left;
+            }
+        }
+
+        #main-content-container {
+            display: flex;
+        }
+
+        #links-sidebar {
+            flex: 2;
+            padding: 10px;
+        }
+
+        #links-sidebar ul {
+            padding: 0 0 0 10px;
+        }
+
+        #links-sidebar li {
+            list-style: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            #links-sidebar {
+                display: none;
+            }
+        }
+
+        #main-content {
+            flex: 6;
+            padding: 10px 20% 10px 10px;
+        }
+
+        @media screen and (max-width: 600px) {
+            #main-content {
+                padding-right: 10px;
+            }
+
+        }
+
+        .main-content__img--full-width {
+            width: 100%;
+        }
+
+        #footer {
+            padding: 0 20px 20px 20px;
+            margin-top: auto;
+            display: flex;
+            background: #659b5e;
+        }
+
+        @media screen and (max-width: 600px) {
+            #footer {
+                flex-direction: column;
+            }
+
+            .footer__section {
+                border-bottom: 1px solid;
+                padding-bottom: 10px;
+
+            }
+
+        }
+
+        .footer__section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .social__networks {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .social__network {
+            display: flex;
+            align-items: center;
+        }
+
+        .social__icon {
+            font-size: 32px;
+        }
+
+        .social__icon-handler {
+            margin-left: 10px;
+        }
+
+        input[type=email], textarea {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            transition: 0.5s;
+            outline: none;
+        }
+
+        input[type=email]:focus, textarea:focus {
+            border: 3px solid #555;
+        }
+
+        input[type=submit] {
+            background: #666655;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .footer__more-sites ul {
+            padding: 0 0 0 10px;
+        }
+
+        .footer__more-sites li {
+            list-style: none;
+        }
+      table {
+         color: black;
+         font-family:  PT Sans Narrow;
+      }
+
+
+    </style>
+
+    <script>
+        function myFunction() {
+            const navigationBar = document.getElementById("navigation-bar");
+            if (navigationBar.className === "navigation-bar") {
+                navigationBar.className += " responsive";
+            } else {
+                navigationBar.className = "navigation-bar";
+            }
+        }
+    </script>
+</head>
+<body>
+<header id="header">
+    <h1> JUEGO PARA PREESCOLAR </h1>
+</header>
+
+<nav id="navigation-bar" class="navigation-bar">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a class="active" href="index2.html">QUIEN LO DESARROLLO</a></li>
+        <li><a href="index3.html">PUBLICO DIRIGIDO</a></li>
+        <li><a href="ondex4.html">OBJETIVO GENERAL</a></li>
+        <li class="menu__hamburger-icon">
+            <a href="javascript:void(0);" onclick="myFunction()">
+                <i class="lni lni-menu"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<div id="main-content-container">
+    <section id="main-content">
+      <h1>Conoce a las desarrolladoras de este incrible juego</h1>
+      <br>
+      <table border="2" width="100%" align="center" border-collapse= separate>
+        <tr>
+            <td >
+              <p>Ingrid Jocelyn Oropeza Chavez </p>
+              <center><img loading="lazy" src="Imagen de WhatsApp 2024-03-11 a las 20.23.17_ce4e017f.jpg" alt="Jocelyn"  width="250px" height="300px"></center>
+            </td>
+            <td>
+              <p>Yazmin Mayorga Ramirez</p>
+              <center><img loading="lazy" src="yo.jpg" alt="Jocelyn"  width="250px" height="300px"></center>
+            </td>
+
+        </tr>
+        <tr>
+        <td colspan="2">
+          <p>Actualmente ambas somos estudiantes del segundo cuatrimestre de pedagogia en  <a href="https://www.facebook.com/UEEMTX?mibextid=LQQJ4d">Universidad UEEM, campus tequisquiapan </a>.</p>
+        </td>
+        </tr>
+      </table>
+    </section>
+</div>
+
+<footer id="footer">
+    <p>
+       Este fue un proyecto para la materia de Introduccion a la Didactica, con el docente Jorman Rafael Sanchez Guerrero, encargado de la misma, con el cual debiamos desarrollar un juego en PowerPoint con una finalidad educativa.
+     </p>
+</footer>
+</body>
+</html>
